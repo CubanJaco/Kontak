@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jaco.contact.MainActivity">
+
+    <item android:id="@+id/action_options"
+        android:title="@string/options"
+        android:icon="@drawable/icon_options"
+        app:showAsAction="always" />
+
+    <!--<item-->
+        <!--android:id="@+id/action_call_log"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/call_log"-->
+        <!--app:showAsAction="never" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_advanced_search"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_advanced_search"-->
+        <!--app:showAsAction="never" />-->
+
+    <!--<item-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:orderInCategory="100"-->
+        <!--android:title="@string/action_settings"-->
+        <!--app:showAsAction="never" />-->
+</menu>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/switch_layout"
+    android:layout_width="@dimen/switch_button_layout"
+    android:layout_height="@dimen/switch_button"
+    android:background="@drawable/circle_layout_switch"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/fix_switch"
+        android:layout_width="@dimen/switch_button"
+        android:layout_height="@dimen/switch_button"
+        android:layout_marginEnd="@dimen/switch_button"
+        android:layout_marginRight="@dimen/switch_button"
+        android:visibility="invisible"
+        android:background="@drawable/switch_button_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="F"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textBigSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mobile_switch"
+        android:layout_width="@dimen/switch_button"
+        android:layout_height="@dimen/switch_button"
+        android:background="@drawable/switch_button_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="M"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textBigSize" />
+
+    </LinearLayout>
+
+</LinearLayout>

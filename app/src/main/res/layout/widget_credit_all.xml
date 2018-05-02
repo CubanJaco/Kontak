@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageButton
+        android:id="@+id/button_credit"
+        android:layout_weight="100"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corner_button_blue"
+        android:layout_margin="@dimen/widget_margin"
+        android:padding="@dimen/padding_small_button"
+        android:tint="@color/white"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_saldo" />
+
+    <ImageButton
+        android:id="@+id/button_saldo_bono"
+        android:layout_weight="100"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corner_button_blue"
+        android:layout_margin="@dimen/widget_margin"
+        android:padding="@dimen/padding_small_button"
+        android:tint="@color/white"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_saldo_bono"/>
+
+    <ImageButton
+        android:id="@+id/button_saldo_voz"
+        android:layout_weight="100"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corner_button_blue"
+        android:layout_margin="@dimen/widget_margin"
+        android:padding="@dimen/padding_small_button"
+        android:tint="@color/white"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_voice_saldo"/>
+
+    <ImageButton
+        android:id="@+id/button_saldo_sms"
+        android:layout_weight="100"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_corner_button_blue"
+        android:layout_margin="@dimen/widget_margin"
+        android:padding="@dimen/padding_small_button"
+        android:tint="@color/white"
+        android:scaleType="centerInside"
+        android:src="@drawable/icon_sms_saldo"/>
+
+</LinearLayout>

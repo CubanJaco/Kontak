@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".StartFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/button_sms_free"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_button_green"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/button_icon_size"
+                        android:layout_height="@dimen/button_icon_size"
+                        android:layout_gravity="end|top"
+                        android:tint="@color/white"
+                        android:src="@drawable/icon_free_call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/icon_text_space"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/free"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textBigSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_sms_entumovil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_button_red"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/button_icon_size"
+                        android:layout_height="@dimen/button_icon_size"
+                        android:layout_gravity="end|top"
+                        android:tint="@color/white"
+                        android:src="@drawable/icon_free_call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/icon_text_space"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/entumovil"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textBigSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button_sms_titulares"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_corner_button_red"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/button_icon_size"
+                        android:layout_height="@dimen/button_icon_size"
+                        android:layout_gravity="end|top"
+                        android:tint="@color/white"
+                        android:src="@drawable/icon_free_call" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/icon_text_space"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:text="@string/titular"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/textBigSize" />
+
+                </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingStart="@dimen/activity_horizontal_margin" >
+
+    <EditText
+        android:id="@+id/actual_pin_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="4"
+        android:hint="@string/actual_pin_code"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/new_pin_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="4"
+        android:hint="@string/new_pin_code"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/confirm_new_pin_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="4"
+        android:hint="@string/confirm_new_pin_code"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:singleLine="true" />
+
+</LinearLayout>

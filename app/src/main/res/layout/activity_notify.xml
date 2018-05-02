@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/notification_dialog"
+    android:background="@color/dialog_Green"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="@dimen/notification_padding"
+        android:paddingStart="@dimen/notification_padding"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/notification_picture"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/avatar_size"
+            android:layout_width="@dimen/avatar_size" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/notification_padding"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/notification_name"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:lines="1"
+                android:textSize="@dimen/textBigSize"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/notification_number"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/textSmallSize"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/notification_address"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/textSmallSize"
+                android:textColor="@color/white"
+                android:maxLines="2" />
+
+            <TextView
+                android:id="@+id/notification_province"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="@dimen/textSmallSize"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

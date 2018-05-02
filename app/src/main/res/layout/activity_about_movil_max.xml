@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/contact_background" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/movil_max_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/contact_logo" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_smartphone"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/padding_big_button"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginRight="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:autoLink="phone"
+                        android:text="@string/contact_movil_max_mobile"
+                        android:textSize="@dimen/textMediumSize" />
+
+                    <ImageView
+                        android:id="@+id/send_sms"
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_message"
+                        android:tint="@color/movil_max_grey" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_phone"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:autoLink="phone"
+                        android:text="@string/contact_movil_max_fix"
+                        android:textSize="@dimen/textMediumSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_email"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:autoLink="email"
+                        android:text="@string/contact_movil_max_email"
+                        android:textSize="@dimen/textMediumSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_network"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:autoLink="web"
+                        android:text="@string/contact_movil_max_url"
+                        android:textSize="@dimen/textMediumSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_time"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:text="@string/contact_movil_max_open"
+                        android:textSize="@dimen/textMediumSize" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/padding_big_button">
+
+                    <ImageView
+                        android:layout_width="@dimen/contact_icon_size"
+                        android:layout_height="@dimen/contact_icon_size"
+                        android:src="@drawable/icon_place"
+                        android:tint="@color/movil_max_grey" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_big_button"
+                        android:layout_marginStart="@dimen/padding_big_button"
+                        android:autoLink="web"
+                        android:text="@string/contact_movil_max_address"
+                        android:textSize="@dimen/textMediumSize" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <android.support.design.widget.CoordinatorLayout
+                android:id="@+id/map_movil_max"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/mapa"/>
+
+                <ImageView
+                    android:id="@+id/movil_max_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/movil_max_position" />
+
+            </android.support.design.widget.CoordinatorLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        app:fabSize="mini"
+        android:layout_gravity="top|end"
+        app:backgroundTint="@color/white"
+        android:tint="@color/colorAccent"
+        android:src="@drawable/question"/>
+
+</android.support.design.widget.CoordinatorLayout>

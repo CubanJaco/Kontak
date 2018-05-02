@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/padding_big_button"
+    android:paddingRight="@dimen/padding_big_button"
+    android:paddingTop="@dimen/padding_small_button"
+    android:paddingBottom="@dimen/padding_small_button"
+    android:background="?attr/buttonBackground">
+
+    <ImageView
+        android:id="@+id/contact_image"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
+        android:layout_marginEnd="@dimen/padding_big_button"
+        android:layout_marginRight="@dimen/padding_big_button" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textSize="@dimen/textMediumSize" />
+
+        <TextView
+            android:id="@+id/contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/textSmallSize" />
+
+    </LinearLayout>
+
+</LinearLayout>

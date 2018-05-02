@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:resizeMode="horizontal"
+    android:previewImage="@drawable/widget_2"
+    android:minWidth="@dimen/widget_size_two"
+    android:minHeight="@dimen/widget_size"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/widget_call_credit" />

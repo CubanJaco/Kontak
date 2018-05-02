@@ -1,0 +1,362 @@
+<resources>
+
+    <!--Preferences key-->
+    <string name="preference_notification_today" translatable="false">notification_today</string>
+    <string name="preference_query_limit" translatable="false">query_limit</string>
+    <string name="preference_selected_db_path" translatable="false">select_db_path</string>
+    <string name="preference_selected_db" translatable="false">select_db</string>
+    <string name="preference_free_call_prefix" translatable="false">free_call_prefix</string>
+    <string name="preference_sms_notifications" translatable="false">sms_notifications</string>
+    <string name="preference_show_alert" translatable="false">show_notification</string>
+    <string name="preference_show_alert_position" translatable="false">show_notification_position</string>
+    <string name="preference_missed_call_notification" translatable="false">missed_call_notification</string>
+    <string name="preference_alternative_database" translatable="false">alternative_database</string>
+    <string name="preference_first_time_open" translatable="false">first_time_open</string>
+    <string name="preference_show_permissions_alert" translatable="false">show_permissions_alert</string>
+    <string name="preference_ignore_first_idle" translatable="false">ignore_first_idle</string>
+    <string name="preference_birthday_notification" translatable="false">birthday_notification</string>
+    <string name="preference_birthday_notification_dialog" translatable="false">birthday_notification_dialog</string>
+    <string name="preference_flash_notification" translatable="false">preference_flash_alert_dialog</string>
+    <string name="preference_flash_speed" translatable="false">preference_flash_speed</string>
+    <string name="preference_flash_speed_on" translatable="false">preference_flash_speed_on</string>
+    <string name="preference_flash_speed_off" translatable="false">preference_flash_speed_off</string>
+    <string name="preference_corporate" translatable="false">preference_is_corporate</string>
+
+    <string name="reload_number" translatable="false">#### #### #### ####</string>
+    <string name="contact_email" translatable="false">\nalvarezosvel@nauta.cu\n</string>
+    <string name="contact_email_clean" translatable="false">alvarezosvel@nauta.cu</string>
+    <string name="contact_number" translatable="false">+5354260552</string>
+
+    <string name="app_name">KontaK</string>
+    <string name="CI">Carnet de identidad</string>
+    <string name="action_advanced_search">Búsqueda avanzada</string>
+    <string name="action_settings">Configuración</string>
+    <string name="actual_pin_code">Código actual</string>
+    <string name="add_custom_birthday">Añadir cumpleaños</string>
+    <string name="address">Dirección:</string>
+    <string name="age">Edad:</string>
+    <string name="alternative_database">Base de datos alternativa</string>
+    <string name="alternative_database_summary">Seleccionar si no se obtiene ninguna coincidencia en la búsqueda por número de los celulares</string>
+    <string name="april">Abr</string>
+    <string name="august">Ago</string>
+    <string name="birth_date">Fecha de nacimiento:</string>
+    <string name="birthday">Cumpleaños</string>
+    <string name="birthday_added">Notificación de cumpleaños añadida</string>
+    <string name="birthday_coming" formatted="false">El cumpleaños de %s es en %d días</string>
+    <string name="notify_birthday">Notificar cumpleaños</string>
+    <string name="birthday_notification">Notificación de cumpleaños</string>
+    <string name="birthday_notification_dialog_summary">Define cuándo mostrar las notificaciones de cumpleaños</string>
+    <string name="birthday_notification_summary">Mostrar notificaciones de cumpleaños</string>
+    <string name="birthday_today" formatted="false">Hoy es el cumpleaños de %s</string>
+    <string name="both">Ambos</string>
+    <string name="bottom_position">Abajo</string>
+    <string name="call_notification">Notificación de llamadas perdidas</string>
+    <string name="call_notification_summary">Define cuándo mostrar las notificaciones de llamadas perdidas</string>
+    <string name="camaguey">Camagüey</string>
+    <string name="cancel">Cancelar</string>
+    <string name="category_database">Base de datos</string>
+    <string name="center">Centro</string>
+    <string name="change">Cambiar</string>
+    <string name="change_pin_code">Cambiar pin</string>
+    <string name="ciego">Ciego de Ávila</string>
+    <string name="cienfuegos">Cienfuegos</string>
+    <string name="confirm_new_pin_code">Confirmar el nuevo pin</string>
+    <string name="contact_copyright">\n© 2016 Ing. Osvel Alvarez Jacomino</string>
+    <string name="contact_version">"Versión "</string>
+    <string name="contains">Contiene1, contiene2…</string>
+    <string name="create">Crear</string>
+    <string name="credit">Crédito</string>
+    <string name="credit_consult">Consultar crédito</string>
+    <string name="bag_credit">Consultar bolsa</string>
+    <string name="bonus_credit">Consultar bono</string>
+    <string name="sms_credit">Consultar SMS</string>
+    <string name="voice_credit">Consultar voz</string>
+    <string name="custom">Cumpleaños personalizado</string>
+    <string name="customize">Personalizar</string>
+    <string name="days">Días</string>
+    <string name="december">Dic</string>
+    <string name="default_prefix">*99 (Predefinido)</string>
+    <string name="delete">Eliminar</string>
+    <string name="donate">Donar</string>
+    <string name="empty_name">Nombre vacío</string>
+    <string name="ends_with">Termina con</string>
+    <string name="exactly">Exactamente</string>
+    <string name="february">Feb</string>
+    <string name="file_chooser">Selector de archivos</string>
+    <string name="filter">Filtro</string>
+    <string name="filter_message">¿Qué desea buscar?</string>
+    <string name="five_day">Cinco días antes</string>
+    <string name="fix">Fijo</string>
+    <string name="free">Gratis</string>
+    <string name="entumovil">ENTUMOVIL</string>
+    <string name="titular">Titulares</string>
+    <string name="free_call">Llamada gratis</string>
+    <string name="free_call_summary">Selecciona un prefijo para llamada gratis en dependencia de su teléfono</string>
+    <string name="getting">Obteniendo…</string>
+    <string name="granma">Granma</string>
+    <string name="guantanamo">Guantánamo</string>
+    <string name="habana">Habana</string>
+    <string name="holguin">Holguín</string>
+    <string name="identification_filter">Filtro de carnet</string>
+    <string name="ignore">Ignorar</string>
+    <string name="incoming_call">Llamada entrante</string>
+    <string name="corporate">Línea corporativa</string>
+    <string name="corporate_summary">Seleccione si su línea pertenece a una empresa</string>
+    <string name="sim_type">Tipo de línea</string>
+    <string name="increase">Recargar</string>
+    <string name="invalid_code">Código inválido</string>
+    <string name="invalid_folder">Carpeta inválida</string>
+    <string name="invalid_new_pin">Nuevo código inválido</string>
+    <string name="invalid_number">Número inválido</string>
+    <string name="invalid_pin">Pin inválido</string>
+    <string name="isla">Isla de la Juventud</string>
+    <string name="january">Ene</string>
+    <string name="july">Jul</string>
+    <string name="june">Jun</string>
+    <string name="large_text">"\n\n"
+        "Kontak ofrece mayor comodidad en las operaciones de consulta, "
+        "recarga y transferencia de saldo, sintetizando pasos en el "
+        "acceso al buzón de voz, las llamadas gratuitas y las privadas. "
+        "Integra un set de facilidades e interesantes opciones que "
+        "permiten un acceso sencillo a informaciones importantes en "
+        "su teléfono móvil.\n"
+        "La aplicación puede integrarse con la base de datos de ETECSA "
+        "(no distribuida por el equipo de desarrollo) y, de esta forma, "
+        "buscar los teléfonos que necesite, así como obtener notificaciones "
+        "de los cumpleaños de sus amigos y saber quién le llama, aun cuando "
+        "no conoce el número.\n\n"
+        "NOTA DEL AUTOR\n\n"
+        "Si Kontak le ha sido de ayuda y cree que debería cambiar algo "
+        "o agregarle nuevas funcionalidades, no dude en enviar sus "
+        "sugerencias al correo de contacto.\n\n"
+        "Si de veras está satisfecho con el trabajo realizado y desea "
+        "contribuir al desarrollo de nuevas aplicaciones como esta, puede "
+        "hacerlo transfiriendo saldo al autor con solo presionar la cajita "
+        "de regalo que se muestra encima. Su aporte de $0.01 también ayuda, "
+        "y si es de más, aún mejor.\n\n"
+        "Si desea contratar los servicios de desarrollo para su empresa o "
+        "negocio particular, esperamos por usted.\n"
+        "Muchas gracias.\n\n"
+    </string>
+    <string name="loading">Cargando…</string>
+    <string name="march">Mar</string>
+    <string name="matanzas">Matanzas</string>
+    <string name="may">May</string>
+    <string name="mayabeque_artemisa">Mayabeque / Artemisa</string>
+    <string name="mayabeque">Mayabeque</string>
+    <string name="artemisa">Artemisa</string>
+    <string name="missed_call" formatted="false">Llamada perdida de %s</string>
+    <string name="database_found" formatted="false">Base de datos encontrada en %s</string>
+    <string name="database_path">/sdcard/KontaK/etecsa.db</string>
+    <string name="database_not_found" formatted="false">Base de datos no encontrada</string>
+    <string name="missed_call_manny" formatted="false">%d llamadas perdidas de %s</string>
+    <string name="mobile">Móvil</string>
+    <string name="mode_one_prefix">*+99 (Modo 1)</string>
+    <string name="mode_two_prefix">+539953 (Modo 2)</string>
+    <string name="months">Meses</string>
+    <string name="name">Nombre</string>
+    <string name="name_filter">Filtrar por nombre</string>
+    <string name="name_or_number">Nombre o número</string>
+    <string name="new_pin_code">Nuevo pin</string>
+    <string name="no_database">Sin base de datos</string>
+    <string name="no_permit_alert">No se ha permitido mostrar la alerta</string>
+    <string name="not_matches">No se encontró nada</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="notify">Notificar</string>
+    <string name="november">Nov</string>
+    <string name="number">Número</string>
+    <string name="number_">Número:</string>
+    <string name="number_filter">Filtrar por número</string>
+    <string name="october">Oct</string>
+    <string name="of">de</string>
+    <string name="one_day">Un día antes</string>
+    <string name="one_more_time">Presione una vez más para salir</string>
+    <string name="one_week">Una semana antes</string>
+    <string name="options">Opciones</string>
+    <string name="owner">Propietario:</string>
+    <string name="pin_code">Código pin</string>
+    <string name="pin_mismatch">El nuevo código no coincide</string>
+    <string name="pinar">Pinar del Río</string>
+    <string name="plus">+</string>
+    <string name="private_call">Privada</string>
+    <string name="province">Provincia</string>
+    <string name="province_">Provincia:</string>
+    <string name="province_filter">Filtrar por provincia</string>
+    <string name="receiver">Destinatario</string>
+    <string name="reload_title">Código de recarga</string>
+    <string name="reset">Reiniciar</string>
+    <string name="same_day">El mismo día</string>
+    <string name="all">Todos</string>
+    <string name="sancti_spiritus">Sancti Spiritus</string>
+    <string name="santiago">Santiago de Cuba</string>
+    <string name="save">Guardar</string>
+    <string name="search">Buscar</string>
+    <string name="searching">Buscando…</string>
+    <string name="select_database">Seleccionar base de datos</string>
+    <string name="define_path">Dirección de la base de datos</string>
+    <string name="define_path_summary">Escriba de forma manual la dirección de su base de datos en el dispositivo</string>
+    <string name="query_limit">Cantidad de resultados</string>
+    <string name="send">Enviar</string>
+    <string name="september">Sep</string>
+    <string name="set">Cambiar</string>
+    <string name="show_alert">Mostrar alerta</string>
+    <string name="show_alert_always">Siempre</string>
+    <string name="show_alert_never">Nunca</string>
+    <string name="show_alert_only_99">Solo *99</string>
+    <string name="show_alert_position">Posición de la alerta</string>
+    <string name="show_alert_position_summary">Cambia la posición del diálogo de alerta</string>
+    <string name="show_alert_summary">Define cuándo mostrar el diálogo de alerta en las llamadas entrantes</string>
+    <string name="show_alert_unknown">@string/unknown</string>
+    <string name="show_alert_unknown_99">Desconocido + *99</string>
+    <string name="show_ignore">Mostrar / Ocultar compleaños ignorados</string>
+    <string name="sms_notifications">Notificación de sms</string>
+    <string name="sms_notifications_summary">Define cuándo mostrar la notificación de mensaje entrante</string>
+    <string name="start_with">Comienza con</string>
+    <string name="summary_select_database">Seleccionar una nueva base de datos para buscar los números</string>
+    <string name="summary_query">Cantidad de resultados que se muestran en la busqueda</string>
+    <string name="sync">Sincronizar los cumpleaños</string>
+    <string name="three_day">Tres días antes</string>
+    <string name="title_activity_contact">@string/app_name</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_preferences">Preferencias</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="today">Hoy</string>
+    <string name="top">Arriba</string>
+    <string name="transfer">Transferir</string>
+    <string name="amount">Monto</string>
+    <string name="tunas">Las Tunas</string>
+    <string name="unknown">Desconocido</string>
+    <string name="villa_clara">Villa Clara</string>
+    <string name="voice_mail">Buzón de voz</string>
+    <string name="buy_nauta">Comprar MB</string>
+    <string name="buy_all">Comprar paquete</string>
+    <string name="buy_sms">Comprar SMS</string>
+    <string name="buy_sms_package">Comprar paquete de SMS</string>
+    <string name="buy_voice">Comprar minutos</string>
+    <string name="buy_voice_package">Comprar paquete de voz</string>
+    <string name="yesterday">Ayer</string>
+    <string name="widget_x_2">Kontak (1x2)</string>
+    <string name="widget_x_3">Kontak (1x3)</string>
+    <string name="widget_x_4">Kontak (1x4)</string>
+    <string name="widget_x_4_credit">Kontak Credito (1x4)</string>
+    <string name="title_activity_fragment_container">Kontak Widget</string>
+    <string name="null_search">Criterios de búsqueda vacíos</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="load_more">Cargar más</string>
+    <string name="title_activity_about_movil_max">AboutMovilMax</string>
+    <string name="contact_movil_max_mobile" translatable="false">+5352494762</string>
+    <string name="contact_movil_max_fix" translatable="false">+5378781190</string>
+    <string name="contact_movil_max_email" translatable="false">movilmax@gmail.com</string>
+    <string name="contact_movil_max_url" translatable="false">www.cnccuba.com/movilmax</string>
+    <string name="contact_movil_max_address" translatable="false">Ave Salvador Allende (Carlos III) #1059 e/ Luaces y Almendares</string>
+    <string name="contact_movil_max_open">Abierto de 9:00 AM a 5:00 PM</string>
+    <string name="permission_dialog_title">Permisos denegados</string>
+    <string name="permission_dialog_text">
+        "Se han denegado algunos de los permisos solicitados por la aplicación, "
+        "esto puede ocasionar el mal funcionamiento de la misma.\n\nPor "
+        "favor, revise las configuraciones de su teléfono para un mejor funcionamiento."
+    </string>
+    <string name="not_remember">No recordar más</string>
+    <string name="accept">Aceptar</string>
+    <string name="error_alert">Alerta de error</string>
+    <string name="send_report">Enviar informe</string>
+    <string name="error_alert_message">"Kontak se cerró de un modo inesperado la última vez que "
+        "fue usada. Ayúdanos a evitar que esto suceda nuevamente presionando el botón ¨Enviar informe¨ "
+        "para hacernos llegar un correo electrónico con los detalles."</string>
+    <string name="flash_alerts">Alertas por flash</string>
+    <string name="summary_flash_alerts">Define cuando mostrar las alertas mediante el flash de la cámara</string>
+    <string name="flash_alerts_time">Tiempo del flash</string>
+    <string name="summary_flash_alerts_time">Define cuan rápido se enciende o apaga el flash de la cámara</string>
+    <string name="always">Siempre</string>
+    <string name="free_incoming_call">Llamada grátis</string>
+    <string name="normal_call">Llamada con costo</string>
+    <string name="never">Nunca</string>
+    <string name="flash_time">Tiempo del flash</string>
+    <string name="flash_speed_summary">Define el tiempo que permanece encendido o apagado el flash en la notificación</string>
+    <string name="on_time">Tiempo de encendido</string>
+    <string name="off_time">Tiempo de apagado</string>
+    <string name="close_alert">Cerrar alerta</string>
+    <string name="close_alert_summary">Seleccione si en ocasiones la alerta de llamada entrante no se activa, o termina antes de tiempo</string>
+    <string name="navigation_drawer_open">Abrir el menú de nevegación</string>
+    <string name="navigation_drawer_close">Cerrar el menú de nevegación</string>
+
+    <!-- Menu-->
+    <string name="birthdays">Cumpleaños</string>
+    <string name="call_log">Historial de llamadas</string>
+    <string name="advanced_search">Buzqueda avanzada</string>
+    <string name="settings">Preferencias</string>
+    <string name="about">Sobre KontaK</string>
+    <string name="drawer_title">Kontak</string>
+    <string name="drawer_title_summary">Guía telefónica de Cuba</string>
+    <string name="birthdays_summary">Sé el primero en felicitar a tus amigos</string>
+    <string name="call_log_summary">Sepa quien le llama</string>
+    <string name="advanced_search_summary">Buzqueda por criterios</string>
+    <string name="settings_summary">Configure Kontak a su gusto</string>
+    <string name="about_summary">Conoce más de la aplicación</string>
+
+    <!-- entumovil-->
+    <string name="weather">Tiempo</string>
+    <string name="exchange">Cambio</string>
+    <string name="programs">Cartelera</string>
+    <string name="dhl">DHL</string>
+    <string name="embassy">Embajadas</string>
+    <string name="quotes">Frases</string>
+    <string name="football">Futbol</string>
+    <string name="havanatur">Havanatur</string>
+    <string name="tourism">Turismo</string>
+    <string name="chinese_zodiac">Horoscopo Chino</string>
+    <string name="zodiac">Horoscopo</string>
+    <string name="baseball">Beisbol</string>
+    <string name="recipes">Recetas</string>
+    <string name="marti">Frases martianas</string>
+
+    <string name="weather_summary">Estado del clima</string>
+    <string name="exchange_summary">Tasa de cambio actual</string>
+    <string name="programs_summary">Programación de espectáculos</string>
+    <string name="dhl_summary">Estado de un envío</string>
+    <string name="embassy_summary">Información de embajadas</string>
+    <string name="quotes_summary">Frases, consejos y pensamientos</string>
+    <string name="football_summary">Resultado de los partidos</string>
+    <string name="havanatur_summary">Nuevas ofertas</string>
+    <string name="tourism_summary">Información sobre turismo en Cuba</string>
+    <string name="chinese_zodiac_summary">Información de su signo</string>
+    <string name="zodiac_summary">Consulte su horoscopo</string>
+    <string name="baseball_summary">Resultados de cada juego</string>
+    <string name="recipes_summary">Cocina con nuestra ayuda</string>
+    <string name="marti_summary">Una frase martiana diaria durante 3 meses</string>
+
+    <!-- Entumovil dialogs-->
+    <string name="weather_status">Estado del tiempo en:</string>
+    <string name="exchange_to_cuc">Cambio CUC a:</string>
+    <string name="program_for">Cartelera de:</string>
+
+    <!-- arrays-->
+    <string name="country">País</string>
+    <string name="occident">Occidente</string>
+    <string name="orient">Oriente</string>
+    <string name="euro">Euro</string>
+    <string name="american_dollar">Dolar estadounidense</string>
+    <string name="mexican">Peso mexicano</string>
+    <string name="canadian_dollar">Dolar canadiense</string>
+    <string name="libra_esterlina">Libra esterlina británica</string>
+    <string name="japanese_yen">Yen japonés</string>
+    <string name="franco_suizo">Franco suizo</string>
+    <string name="corona_danesa">Corona danesa</string>
+    <string name="corona_noruega">Corona noruega</string>
+    <string name="corona_sueca">Corona sueca</string>
+    <string name="egrem">Egrem</string>
+    <string name="cine">Cine</string>
+    <string name="theater">Teatro</string>
+    <string name="music">Música</string>
+    <string name="sms_45">45 SMS x 2.50 CUC</string>
+    <string name="sms_35">35 SMS x 2.10 CUC</string>
+    <string name="sms_20">20 SMS x 1.30 CUC</string>
+    <string name="sms_10">10 SMS x 0.70 CUC</string>
+    <string name="voice_40">40 min x 10.00 CUC</string>
+    <string name="voice_25">25 min x 6.50 CUC</string>
+    <string name="voice_15">15 min x 4.20 CUC</string>
+    <string name="voice_10">10 min x 2.90 CUC</string>
+    <string name="voice_5">5 min x 1.50 CUC</string>
+
+
+</resources>

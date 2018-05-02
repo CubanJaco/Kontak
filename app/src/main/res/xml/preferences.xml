@@ -1,0 +1,145 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/incoming_call">
+
+        <ListPreference
+            android:key="@string/preference_show_alert"
+            android:title="@string/show_alert"
+            android:summary="@string/show_alert_summary"
+            android:defaultValue="0"
+            android:entries="@array/call_notification"
+            android:entryValues="@array/call_notification_value"
+            android:dialogTitle="@string/show_alert" />
+
+        <ListPreference
+            android:key="@string/preference_show_alert_position"
+            android:title="@string/show_alert_position"
+            android:summary="@string/show_alert_position_summary"
+            android:defaultValue="1"
+            android:entries="@array/show_notification_position"
+            android:entryValues="@array/show_notification_position_value"
+            android:dialogTitle="@string/show_alert_position"/>
+
+        <ListPreference
+            android:key="@string/preference_flash_notification"
+            android:title="@string/flash_alerts"
+            android:summary="@string/summary_flash_alerts"
+            android:defaultValue="3"
+            android:entries="@array/flash_notification"
+            android:entryValues="@array/flash_notification_value"
+            android:dialogTitle="@string/flash_alerts" />
+
+        <Preference
+            android:title="@string/flash_alerts_time"
+            android:summary="@string/summary_flash_alerts_time"
+            android:key="@string/preference_flash_speed">
+        </Preference>
+
+        <!--<CheckBoxPreference-->
+            <!--android:key="@string/preference_ignore_first_idle"-->
+            <!--android:title="@string/close_alert"-->
+            <!--android:summary="@string/close_alert_summary"-->
+            <!--android:defaultValue="false" />-->
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/sim_type">
+
+        <CheckBoxPreference
+            android:key="@string/preference_corporate"
+            android:title="@string/corporate"
+            android:summary="@string/corporate_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/free_call">
+
+        <ListPreference
+            android:key="@string/preference_free_call_prefix"
+            android:title="@string/free_call"
+            android:summary="@string/free_call_summary"
+            android:defaultValue="*99"
+            android:entries="@array/prefix_free_call"
+            android:entryValues="@array/prefix_free_call_value"
+            android:dialogTitle="@string/free_call" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notifications">
+
+        <ListPreference
+            android:key="@string/preference_missed_call_notification"
+            android:title="@string/call_notification"
+            android:summary="@string/call_notification_summary"
+            android:defaultValue="0"
+            android:entries="@array/call_notification"
+            android:entryValues="@array/call_notification_value"
+            android:dialogTitle="@string/show_alert" />
+
+        <ListPreference
+            android:key="@string/preference_sms_notifications"
+            android:title="@string/sms_notifications"
+            android:summary="@string/sms_notifications_summary"
+            android:defaultValue="0"
+            android:entries="@array/sms_notifications"
+            android:entryValues="@array/sms_notifications_value"
+            android:dialogTitle="@string/sms_notifications" />
+
+        <CheckBoxPreference
+            android:key="@string/preference_birthday_notification"
+            android:title="@string/notify_birthday"
+            android:summary="@string/birthday_notification_summary"
+            android:defaultValue="true" />
+
+        <ListPreference
+            android:key="@string/preference_birthday_notification_dialog"
+            android:title="@string/birthday_notification"
+            android:summary="@string/birthday_notification_dialog_summary"
+            android:defaultValue="0"
+            android:entries="@array/birthday_notification"
+            android:entryValues="@array/birthday_notification_values"
+            android:dialogTitle="@string/birthday_notification"
+            android:dependency="@string/preference_birthday_notification"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/category_database">
+
+        <Preference
+            android:title="@string/select_database"
+            android:summary="@string/summary_select_database"
+            android:key="@string/preference_selected_db">
+        </Preference>
+
+        <EditTextPreference
+            android:title="@string/define_path"
+            android:summary="@string/define_path_summary"
+            android:hint="@string/database_path"
+            android:inputType="text"
+            android:key="@string/preference_selected_db_path">
+        </EditTextPreference>
+
+        <CheckBoxPreference
+            android:key="@string/preference_alternative_database"
+            android:title="@string/alternative_database"
+            android:summary="@string/alternative_database_summary" />
+
+        <ListPreference
+            android:key="@string/preference_query_limit"
+            android:title="@string/query_limit"
+            android:summary="@string/summary_query"
+            android:defaultValue="20"
+            android:entries="@array/query_limit"
+            android:entryValues="@array/query_limit_values"
+            android:dialogTitle="@string/query_limit" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#6a1b9a</color>
+    <color name="colorPrimaryDark">#4a148c</color>
+    <color name="colorAccent">#ff5722</color>
+
+
+    <color name="colorItemSelected">#ffccbc</color>
+
+    <!--<color name="colorPrimary">#e91e63</color>-->
+    <!--<color name="colorPrimaryDark">#c2185b</color>-->
+    <!--<color name="colorAccent">#ab47bc</color>-->
+
+    <!--<color name="colorItemSelected">#e1bee7</color>-->
+
+    <color name="dialog_Green">#904caf50</color>
+    <color name="dialog_Red">#90f44336</color>
+    <color name="white">#ffffff</color>
+
+    <color name="movil_max_grey">#302e2f</color>
+
+    <color name="colorGrey">#9e9e9e</color>
+    <color name="colorGreyLight">#bdbdbd</color>
+
+    <color name="colorBlue">#42a5f5</color>
+    <color name="colorBlueLight">#7e57c2</color>
+
+    <color name="colorGreen">#4caf50</color>
+    <color name="colorGreenLight">#66bb6a</color>
+
+    <color name="colorRed">#f44336</color>
+    <color name="colorRedLight">#ef5350</color>
+
+    <color name="colorOrange">#ffc107</color>
+    <color name="colorOrangeLight">#ffca28</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="button_1">#b71c1c</color>
+    <color name="button_2">#f44336</color>
+    <color name="button_3">#1a237e</color>
+    <color name="button_4">#3f51b5</color>
+    <color name="button_5">#00c853</color>
+
+</resources>

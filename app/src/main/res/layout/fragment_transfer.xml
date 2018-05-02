@@ -1,0 +1,98 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".TransferFragment">
+
+    <EditText
+        android:id="@+id/pin_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="4"
+        android:hint="@string/pin_code"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/transfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/amount"
+        android:inputType="numberDecimal"
+        android:maxLength="5"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/button_change_pin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="40"
+            android:background="@drawable/rounded_corner_button_green"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_big_button">
+
+            <ImageView
+                android:layout_width="@dimen/button_icon_size"
+                android:layout_height="@dimen/button_icon_size"
+                android:layout_gravity="end|top"
+                android:tint="@color/white"
+                android:src="@drawable/icon_change_key" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/icon_text_space"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/change_pin_code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textBigSize" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button_transfer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_weight="60"
+            android:background="@drawable/rounded_corner_button_red"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_big_button">
+
+            <ImageView
+                android:layout_width="@dimen/button_icon_size"
+                android:layout_height="@dimen/button_icon_size"
+                android:layout_gravity="end|top"
+                android:tint="@color/white"
+                android:src="@drawable/icon_transfer" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/icon_text_space"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@string/transfer"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textBigSize" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

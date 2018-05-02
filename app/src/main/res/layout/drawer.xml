@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout_drawer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="@dimen/drawer_list_size"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary" >
+
+        <!--<ListView android:id="@+id/list_drawer"-->
+            <!--android:layout_width="@dimen/drawer_list_size"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:choiceMode="singleChoice"-->
+            <!--android:divider="@android:color/transparent"-->
+            <!--android:dividerHeight="0dp" />-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/menu_recycler"
+            android:layout_width="@dimen/drawer_list_size"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context="com.jaco.drawer.MainActivity"
+            app:layoutManager="LinearLayoutManager" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/drawer_border"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

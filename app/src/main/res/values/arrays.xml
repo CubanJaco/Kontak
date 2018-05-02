@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="months">
+        <item>@string/january</item>
+        <item>@string/february</item>
+        <item>@string/march</item>
+        <item>@string/april</item>
+        <item>@string/may</item>
+        <item>@string/june</item>
+        <item>@string/july</item>
+        <item>@string/august</item>
+        <item>@string/september</item>
+        <item>@string/october</item>
+        <item>@string/november</item>
+        <item>@string/december</item>
+    </string-array>
+
+    <string-array name="day_of_month">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <integer-array name="months_days">
+        <item>31</item> <!--enero-->
+        <item>29</item> <!--febrero-->
+        <item>31</item> <!--marzo-->
+        <item>30</item> <!--abril-->
+        <item>31</item> <!--mayo-->
+        <item>30</item> <!--junio-->
+        <item>31</item> <!--julio-->
+        <item>31</item> <!--agosto-->
+        <item>30</item> <!--septiembre-->
+        <item>31</item> <!--octubre-->
+        <item>30</item> <!--noviembre-->
+        <item>31</item> <!--diciembre-->
+    </integer-array>
+
+    <string-array name="prefix_free_call">
+        <item>@string/default_prefix</item>
+        <item>@string/mode_one_prefix</item>
+        <item>@string/mode_two_prefix</item>
+    </string-array>
+
+    <string-array name="prefix_free_call_value">
+        <item>*99</item>
+        <item>*+99</item>
+        <item>+539953</item>
+    </string-array>
+
+    <string-array name="call_notification">
+        <item>@string/show_alert_always</item>
+        <item>@string/show_alert_only_99</item>
+        <item>@string/show_alert_unknown</item>
+        <item>@string/show_alert_unknown_99</item>
+        <item>@string/show_alert_never</item>
+    </string-array>
+
+    <string-array name="flash_notification">
+        <item>@string/always</item>
+        <item>@string/free_incoming_call</item>
+        <item>@string/normal_call</item>
+        <item>@string/never</item>
+    </string-array>
+
+    <string-array name="flash_notification_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="call_notification_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="show_notification_position_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="show_notification_position">
+        <item>@string/top</item>
+        <item>@string/center</item>
+        <item>@string/bottom_position</item>
+    </string-array>
+
+    <string-array name="sms_notifications">
+        <item>@string/show_alert_always</item>
+        <item>@string/show_alert_unknown</item>
+        <item>@string/show_alert_never</item>
+    </string-array>
+
+    <string-array name="sms_notifications_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="provinces_list">
+        <item>@string/camaguey</item>
+        <item>@string/ciego</item>
+        <item>@string/cienfuegos</item>
+        <item>@string/granma</item>
+        <item>@string/guantanamo</item>
+        <item>@string/habana</item>
+        <item>@string/holguin</item>
+        <item>@string/isla</item>
+        <item>@string/tunas</item>
+        <item>@string/matanzas</item>
+        <item>@string/mayabeque_artemisa</item>
+        <item>@string/pinar</item>
+        <item>@string/sancti_spiritus</item>
+        <item>@string/santiago</item>
+        <item>@string/villa_clara</item>
+    </string-array>
+
+    <integer-array name="province_codes">
+        <item>32</item>
+        <item>33</item>
+        <item>43</item>
+        <item>23</item>
+        <item>21</item>
+        <item>7</item>
+        <item>24</item>
+        <item>46</item>
+        <item>31</item>
+        <item>45</item>
+        <item>47</item>
+        <item>48</item>
+        <item>41</item>
+        <item>22</item>
+        <item>42</item>
+    </integer-array>
+
+    <string-array name="custom_birthday_options">
+        <item>@string/delete</item>
+    </string-array>
+
+    <string-array name="birthday_options">
+        <item>@string/ignore</item>
+        <item>@string/customize</item>
+    </string-array>
+
+    <string-array name="birthday_options_notify">
+        <item>@string/notify</item>
+        <item>@string/customize</item>
+    </string-array>
+
+    <string-array name="birthday_notification">
+        <item>@string/same_day</item>
+        <item>@string/one_day</item>
+        <item>@string/three_day</item>
+        <item>@string/five_day</item>
+        <item>@string/one_week</item>
+    </string-array>
+
+    <string-array name="birthday_notification_values">
+        <item>0</item>
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="query_limit">
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+        <item>500</item>
+        <item>@string/all</item>
+    </string-array>
+
+    <string-array name="query_limit_values">
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+        <item>500</item>
+        <item>10000</item>
+    </string-array>
+
+    <string-array name="weather">
+        <item>@string/country</item>
+        <item>@string/occident</item>
+        <item>@string/center</item>
+        <item>@string/orient</item>
+    </string-array>
+
+    <string-array name="weather_msg">
+        <item>TIEMPO</item>
+        <item>TIEMPO OCC</item>
+        <item>TIEMPO CEN</item>
+        <item>TIEMPO ORI</item>
+    </string-array>
+
+    <string-array name="exchange">
+        <item>@string/euro</item>
+        <item>@string/american_dollar</item>
+        <item>@string/mexican</item>
+        <item>@string/canadian_dollar</item>
+        <item>@string/libra_esterlina</item>
+        <item>@string/japanese_yen</item>
+        <item>@string/franco_suizo</item>
+        <item>@string/corona_danesa</item>
+        <item>@string/corona_noruega</item>
+        <item>@string/corona_sueca</item>
+    </string-array>
+
+    <string-array name="exchange_msg">
+        <item>CAMBIO EUR</item>
+        <item>CAMBIO USD</item>
+        <item>CAMBIO MXN</item>
+        <item>CAMBIO CAD</item>
+        <item>CAMBIO GBP</item>
+        <item>CAMBIO JPY</item>
+        <item>CAMBIO CHF</item>
+        <item>CAMBIO DKK</item>
+        <item>CAMBIO NOK</item>
+        <item>CAMBIO SEK</item>
+    </string-array>
+
+    <string-array name="programs">
+        <item>@string/egrem</item>
+        <item>@string/cine</item>
+        <item>@string/theater</item>
+        <item>@string/music</item>
+    </string-array>
+
+    <string-array name="programs_msg">
+        <item>CARTELERA EGREM</item>
+        <item>CARTELERA CINE</item>
+        <item>CARTELERA TEATRO</item>
+        <item>CARTELERA MUSICA</item>
+    </string-array>
+
+    <string-array name="buy_sms">
+        <item>@string/sms_45</item>
+        <item>@string/sms_35</item>
+        <item>@string/sms_20</item>
+        <item>@string/sms_10</item>
+    </string-array>
+
+    <string-array name="buy_sms_numbers">
+        <item>*133*2*4#</item>
+        <item>*133*2*3#</item>
+        <item>*133*2*2#</item>
+        <item>*133*2*1#</item>
+    </string-array>
+
+    <string-array name="buy_voice">
+        <item>@string/voice_40</item>
+        <item>@string/voice_25</item>
+        <item>@string/voice_15</item>
+        <item>@string/voice_10</item>
+        <item>@string/voice_5</item>
+    </string-array>
+
+    <string-array name="buy_voice_numbers">
+        <item>*133*3*5#</item>
+        <item>*133*3*4#</item>
+        <item>*133*3*3#</item>
+        <item>*133*3*2#</item>
+        <item>*133*3*1#</item>
+    </string-array>
+
+</resources>
