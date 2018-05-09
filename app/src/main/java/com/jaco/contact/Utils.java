@@ -1,5 +1,6 @@
 package com.jaco.contact;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,8 +18,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.support.v7.app.AlertDialog;
-import android.telephony.SmsManager;
-import android.widget.Toast;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.jaco.contact.preferences.mSharedPreferences;
 
@@ -159,10 +160,8 @@ public class Utils {
         return paths;
     }
 
-    public static boolean selectDatabase(Context context){
+    public static boolean selectDatabase(Context context, File external){
 
-        File external = Environment.getExternalStorageDirectory();
-//        List<String> paths = searchDatabase(new File("/storage/sdcard1"));
         List<String> paths = searchDatabase(external);
 
         if (paths.size() == 1 && verifyDatabase(context, paths.get(0))){
@@ -281,4 +280,15 @@ public class Utils {
         dialog.show();
 
     }
+
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) view = new View(activity);
+
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
 }

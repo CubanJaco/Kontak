@@ -123,9 +123,10 @@ public class BirthdayBroadcastReceiver extends BroadcastReceiver {
                         .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                         .setAutoCancel(true);
 
-        if (notificationSound != null)
+        boolean silence = mSharedPreferences.silenceBirthdayNotification(context);
+        if (!silence  && notificationSound != null)
             builder.setSound(notificationSound, Notification.DEFAULT_SOUND);
-        else
+        else if (!silence)
             builder.setSound(null, Notification.DEFAULT_SOUND);
 
         PhoneEntry[] entries;

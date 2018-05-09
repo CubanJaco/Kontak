@@ -154,19 +154,8 @@ public class CreditFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
-
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        activity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         //ocultar campo de busqueda
         final LinearLayout search_layout = (LinearLayout) getActivity().findViewById(R.id.search_layout);

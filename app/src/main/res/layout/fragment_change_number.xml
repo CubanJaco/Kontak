@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".StartFragment">
+
+    <LinearLayout
+        android:id="@+id/add_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@drawable/rounded_corner_button_red"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_big_button"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/button_icon_size"
+            android:layout_height="@dimen/button_icon_size"
+            android:layout_gravity="end|top"
+            android:src="@drawable/friend_add"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/icon_text_space"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/add_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textBigSize" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/remove_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_button_blue"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_big_button"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/button_icon_size"
+            android:layout_height="@dimen/button_icon_size"
+            android:layout_gravity="end|top"
+            android:src="@drawable/friend_remove"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/icon_text_space"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="@string/remove_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textBigSize" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.provider.CallLog;
@@ -17,9 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.lang.ref.WeakReference;
@@ -27,20 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by osvel on 7/27/16.
+ * Created by osvel on 5/8/18.
  */
+
 public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder> {
 
-    private List<CallDetails> calls;
+    private List<MyCallLog.Call> calls;
 
-    public CallLogAdapter(List<CallDetails> calls) {
+    public CallLogAdapter(List<MyCallLog.Call> calls) {
         this.calls = calls;
-    }
-
-    public void addAll(List<CallDetails> calls){
-        if (this.calls == null)
-            this.calls = new ArrayList<>();
-        this.calls.addAll(calls);
     }
 
     @Override
@@ -51,36 +42,25 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
     }
 
     @Override
-    public void onBindViewHolder(final mHolder holder, int position) {
+    public void onBindViewHolder(mHolder holder, int position) {
 
-        CallDetails call = calls.get(position);
+        MyCallLog.Call call = calls.get(position);
         final Context context = holder.mView.getContext();
 
         //preparar la dimension de la imagen
         int dim = (int) context.getResources().getDimension(R.dimen.icon_size);
 
-        //si es un contacto intentar cargar la imagen o de lo contrario cargar R.drawable.user
-        if (call.getImageUri() != null){
-            Uri displayPhotoUri = call.getImageUri();
-            Picasso.with(context)
-                    .load(displayPhotoUri)
-                    .resize(dim, dim)
-                    .transform(MainActivity.transformation)
-                    .into(holder.contact_image,
-                            getPicassoCallback(context, holder.contact_image, dim));
-        }
-        else {
-            Picasso.with(context)
-                    .load(R.drawable.user)
-                    .resize(dim, dim)
-                    .transform(MainActivity.transformation)
-                    .into(holder.contact_image);
-        }
+
+        Picasso.with(context)
+                .load(R.drawable.user)
+                .resize(dim, dim)
+                .transform(MainActivity.transformation)
+                .into(holder.contact_image);
 
         //falta cargar la imagen del tipo de llamada
         int resId = -1;
         int color = -1;
-        switch (call.getCall().getType()){
+        switch (call.getType()){
             case CallLog.Calls.MISSED_TYPE: {
                 resId = R.drawable.call_missed;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
@@ -113,20 +93,19 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
             holder.call_identifier.setColorFilter(color);
 
         //establecer datos al adapter
-        holder.contact_name.setText(call.getName());
-        holder.contact_number.setText(call.getCall().getNumber());
-        holder.call_duration.setText(call.getCall().getDuration());
-        holder.call_time.setText(call.getCall().getStringTime());
+        holder.contact_number.setText(call.getNumber());
+        holder.call_duration.setText(call.getDuration());
+        holder.call_time.setText(call.getStringTime());
 
-        if (position == 0 || !call.getCall().getDay().equals(calls.get(position-1).getCall().getDay())){
+        if (position == 0 || !call.getDay().equals(calls.get(position-1).getDay())){
             holder.call_day_layout.setVisibility(View.VISIBLE);
-            holder.call_day.setText(call.getCall().getDay());
+            holder.call_day.setText(call.getDay());
         }
         else {
             holder.call_day_layout.setVisibility(View.GONE);
         }
 
-        final PhoneNumber phoneNumber = new PhoneNumber(call.getCall().getNumber());
+        final PhoneNumber phoneNumber = new PhoneNumber(call.getNumber());
         holder.call_log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -134,59 +113,24 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
             }
         });
 
-        if (position == getItemCount()-1 && getItemCount() % 25 == 0){
-            holder.load_more.setVisibility(View.VISIBLE);
-            final int page = (getItemCount() / 25) + 1;
-            holder.load_more.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    MyCallLog callLog = new MyCallLog(holder.mView.getContext());
-                    new CallLogFragment.mAsyncTask(
-                            (Activity) holder.mView.getContext()
-                    ).execute(callLog.getCallLog(page));
-                }
-            });
-        }
-        else {
-            holder.load_more.setVisibility(View.GONE);
-        }
-
-    }
-
-    public void findContact(Context context, String number){
-        //verificar la base de datos
-//        EtecsaDB database = new EtecsaDB(context);
-//        if (!database.hasDatabase()){
-//            Toast.makeText(context, R.string.no_database, Toast.LENGTH_SHORT).show();
-//        }
-
-        if (PhoneNumber.isValidNumber(number))
-            new Search(context).execute(number);
-    }
-
-    public Callback getPicassoCallback(final Context context, final ImageView imageView, final int dim){
-
-        return new Callback() {
-            @Override
-            public void onSuccess() {
-
-            }
-
-            @Override
-            public void onError() {
-                Picasso.with(context)
-                        .load(R.drawable.user)
-                        .resize(dim, dim)
-                        .transform(MainActivity.transformation)
-                        .into(imageView);
-            }
-        };
-
+        holder.contact_name.setText(R.string.loading);
+        AsyncCallLogHolder.loadCallLog(holder.itemView.getContext(), calls.get(position), holder);
     }
 
     @Override
     public int getItemCount() {
         return calls.size();
+    }
+
+    public void addAll(List<MyCallLog.Call> calls){
+        if (this.calls == null)
+            this.calls = new ArrayList<>();
+        this.calls.addAll(calls);
+    }
+
+    public void findContact(Context context, String number){
+        if (PhoneNumber.isValidNumber(number))
+            new Search(context).execute(number);
     }
 
     public class mHolder extends RecyclerView.ViewHolder {
@@ -202,6 +146,7 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
         protected TextView contact_number;
         protected TextView call_time;
         protected TextView call_duration;
+        private AsyncCallLogHolder asyncCallLogHolder;
 
         public mHolder(View itemView) {
             super(itemView);
@@ -216,6 +161,14 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
             contact_number = (TextView) mView.findViewById(R.id.contact_number);
             call_time = (TextView) mView.findViewById(R.id.call_hour);
             call_duration = (TextView) mView.findViewById(R.id.call_duration);
+        }
+
+        public AsyncCallLogHolder getAsyncCallLog() {
+            return asyncCallLogHolder;
+        }
+
+        public void setAsyncCallLog(AsyncCallLogHolder asyncCallLogHolder) {
+            this.asyncCallLogHolder = asyncCallLogHolder;
         }
     }
 
@@ -294,20 +247,6 @@ public class CallLogAdapter extends RecyclerView.Adapter<CallLogAdapter.mHolder>
                 }
                 activity.startActivity(intent);
             }
-//            else {
-//                //no encontro nada mostrar mensaje
-//                AppCompatActivity activity = (AppCompatActivity) weakReference.get();
-//                Intent intent = new Intent(activity, ProfileActivity.class);
-//                intent.putExtra(ProfileActivity.PHONE_ENTRY, phoneEntry[0]);
-//                activity.startActivity(intent);
-//
-//                weakReference.get().runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        Toast.makeText(weakReference.get().getApplicationContext(), R.string.not_matches, Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//            }
 
             progressDialog.dismiss();
         }

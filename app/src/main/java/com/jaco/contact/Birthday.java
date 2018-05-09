@@ -4,8 +4,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
 
 import com.jaco.contact.preferences.mSharedPreferences;
 
@@ -15,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by osvel on 7/28/16.
@@ -231,8 +229,9 @@ public class Birthday {
         left += PLUS_TIME;
         calendar.setTimeInMillis(left);
 
-        if (calendar.get(Calendar.MONTH) != 0){
-            return calendar.get(Calendar.MONTH) + " " + context.getResources().getString(R.string.months);
+        int month = calendar.get(Calendar.MONTH);
+        if (month != 0){
+            return month + " " + context.getResources().getString(R.string.months);
         }
 
         return calendar.get(Calendar.DAY_OF_MONTH) + " " + context.getResources().getString(R.string.days);
@@ -303,17 +302,19 @@ public class Birthday {
 //            manager.set(AlarmManager.RTC_WAKEUP, birthday.getTimeInMillis()-(days_before*24*60*60*1000), PendingIntent.getBroadcast(context, getId(), intent, PendingIntent.FLAG_CANCEL_CURRENT));
         }
 
-        //si la notificacion ya paso se establece para el siguiente año
-        if (current.getTimeInMillis() > millis){
-            GregorianCalendar calendar = new GregorianCalendar();
-            calendar.setTimeInMillis(millis);
-            calendar.set(Calendar.YEAR, current.get(Calendar.YEAR) + 1);
-            millis = calendar.getTimeInMillis();
-        }
+        //establecer la notificacion para las 9am
+        GregorianCalendar calendar = new GregorianCalendar();
+        calendar.setTimeInMillis(millis);
+        calendar.set(Calendar.HOUR_OF_DAY, 9);
 
-        if (custom != null || birthday != null) {
+        //si la notificacion ya paso se establece para el siguiente año
+        if (current.getTimeInMillis() > millis)
+            calendar.add(Calendar.YEAR, 1);
+
+        millis = calendar.getTimeInMillis();
+
+        if (custom != null || birthday != null)
             manager.set(AlarmManager.RTC_WAKEUP, millis, PendingIntent.getBroadcast(context, getId(), intent, PendingIntent.FLAG_CANCEL_CURRENT));
-        }
 
     }
 

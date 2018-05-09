@@ -118,6 +118,13 @@ public class mSharedPreferences {
 
     }
 
+    public static boolean silenceBirthdayNotification(Context context){
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
+        return settings.getBoolean(context.getResources().getString(R.string.preference_silence_birthday_notification), true);
+
+    }
+
     public static int getBirthdayNotificationDialog(Context context){
 
         //get shared preferences

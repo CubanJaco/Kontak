@@ -94,7 +94,11 @@ public class PhoneEntry implements Serializable {
     }
 
     public int getProvinceNumber() {
-        return Integer.parseInt(this.province);
+        try {
+            return Integer.parseInt(this.province);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
     }
 
     public String getProvinceName(Context context){

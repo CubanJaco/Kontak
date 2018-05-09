@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabaseCorruptException;
+import android.database.sqlite.SQLiteException;
 
 import com.jaco.contact.preferences.mSharedPreferences;
 
@@ -86,7 +87,7 @@ public class EtecsaDB {
         return false;
     }
 
-    public int getLastIndex(){
+    public int getLastIndex() throws SQLiteException{
 
         int last_id = -1;
 
@@ -109,7 +110,7 @@ public class EtecsaDB {
 
     }
 
-    public void updateNumberByID(String newNumber, int id){
+    public void updateNumberByID(String newNumber, int id) throws SQLiteException{
 
         //actualizar la tupla en la base de datos con el nuevo numero
         //UPDATE "movil" SET "number" = ? WHERE  "rowid" = ?
@@ -306,8 +307,13 @@ public class EtecsaDB {
         String consult = createFixConsult(advancedSearch);
         int limit = mSharedPreferences.getQueryLimit(context);
 
-        Cursor matches = this.db.query(this.DATABASE_TABLE_FIX, null,
+        Cursor matches;
+        try {
+            matches = this.db.query(this.DATABASE_TABLE_FIX, null,
                     consult, null, null, null, null, ""+limit);
+        } catch (SQLiteException e) {
+            return null;
+        }
 
         int i = 0;
         PhoneEntry[] phones = new PhoneEntry[matches.getCount()];
@@ -337,7 +343,13 @@ public class EtecsaDB {
 
         boolean alternative = mSharedPreferences.isAlternativeDatabase(context);
 
-        Cursor matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, consult, null, null, null, null, ""+limit);
+        Cursor matches;
+        try {
+            matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, consult, null, null, null, null, ""+limit);
+        } catch (SQLiteException e) {
+            return null;
+        }
+
         int i = 0;
         PhoneEntry[] phones = new PhoneEntry[matches.getCount()];
         if (!matches.moveToFirst()) {
@@ -375,7 +387,7 @@ public class EtecsaDB {
             return advancedSearchMovil(advancedSearch);
     }
 
-    private PhoneEntry[] searchMobileByNumber(String number) {
+    private PhoneEntry[] searchMobileByNumber(String number) throws SQLiteException {
         if (!isOpen()) {
             return null;
         }
@@ -412,7 +424,7 @@ public class EtecsaDB {
         return phones;
     }
 
-    private PhoneEntry[] searchFixByNumber(String number) {
+    private PhoneEntry[] searchFixByNumber(String number) throws SQLiteException{
         if (!isOpen()) {
             return null;
         }
@@ -472,11 +484,10 @@ public class EtecsaDB {
             return null;
         }
 
-        if (phoneNumber.isMovil()){
-            return searchMobileByNumber(number);
-        }
-        else {
-            return searchFixByNumber(number);
+        try {
+            return phoneNumber.isMovil() ? searchMobileByNumber(number) : searchFixByNumber(number);
+        } catch (SQLiteException e) {
+            return null;
         }
 
     }
@@ -495,7 +506,13 @@ public class EtecsaDB {
 
         sentence += "%'";
 
-        Cursor matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, sentence, null, null, null, null, ""+limit);
+        Cursor matches;
+        try {
+            matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, sentence, null, null, null, null, ""+limit);
+        } catch (SQLiteException e) {
+            return null;
+        }
+
         int i = 0;
         PhoneEntry[] phones = new PhoneEntry[matches.getCount()];
         if (!matches.moveToFirst()) {
@@ -531,10 +548,9 @@ public class EtecsaDB {
 
       	Cursor matches;
         try {
-	    matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, MOVIL_ROW_ID+" = "+id, null, null, null, null, ""+1);
+            matches = this.db.query(this.DATABASE_TABLE_MOVIL, null, MOVIL_ROW_ID+" = "+id, null, null, null, null, ""+1);
         }
         catch (SQLiteDatabaseCorruptException e){
-            e.printStackTrace();
             close();
             return null;
         }
@@ -560,7 +576,13 @@ public class EtecsaDB {
         sentence += "%'";
         int limit = mSharedPreferences.getQueryLimit(context);
 
-        Cursor matches = this.db.query(this.DATABASE_TABLE_FIX, null, sentence, null, null, null, null, ""+limit);
+        Cursor matches;
+        try {
+            matches = this.db.query(this.DATABASE_TABLE_FIX, null, sentence, null, null, null, null, "" + limit);
+        } catch (SQLiteException e) {
+            return null;
+        }
+
         int i = 0;
         PhoneEntry[] phones = new PhoneEntry[matches.getCount()];
         if (!matches.moveToFirst()) {

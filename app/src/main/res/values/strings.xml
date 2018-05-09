@@ -15,6 +15,7 @@
     <string name="preference_show_permissions_alert" translatable="false">show_permissions_alert</string>
     <string name="preference_ignore_first_idle" translatable="false">ignore_first_idle</string>
     <string name="preference_birthday_notification" translatable="false">birthday_notification</string>
+    <string name="preference_silence_birthday_notification" translatable="false">silence_birthday_notification</string>
     <string name="preference_birthday_notification_dialog" translatable="false">birthday_notification_dialog</string>
     <string name="preference_flash_notification" translatable="false">preference_flash_alert_dialog</string>
     <string name="preference_flash_speed" translatable="false">preference_flash_speed</string>
@@ -44,9 +45,11 @@
     <string name="birthday_added">Notificación de cumpleaños añadida</string>
     <string name="birthday_coming" formatted="false">El cumpleaños de %s es en %d días</string>
     <string name="notify_birthday">Notificar cumpleaños</string>
+    <string name="silence_birthday">Silenciar cumpleaños</string>
     <string name="birthday_notification">Notificación de cumpleaños</string>
     <string name="birthday_notification_dialog_summary">Define cuándo mostrar las notificaciones de cumpleaños</string>
     <string name="birthday_notification_summary">Mostrar notificaciones de cumpleaños</string>
+    <string name="silence_birthday_summary">Las notificaciones de cumpleaños solo vibrarán si se selecciona esta opción</string>
     <string name="birthday_today" formatted="false">Hoy es el cumpleaños de %s</string>
     <string name="both">Ambos</string>
     <string name="bottom_position">Abajo</string>
@@ -228,12 +231,13 @@
     <string name="unknown">Desconocido</string>
     <string name="villa_clara">Villa Clara</string>
     <string name="voice_mail">Buzón de voz</string>
-    <string name="buy_nauta">Comprar MB</string>
-    <string name="buy_all">Comprar paquete</string>
-    <string name="buy_sms">Comprar SMS</string>
-    <string name="buy_sms_package">Comprar paquete de SMS</string>
-    <string name="buy_voice">Comprar minutos</string>
-    <string name="buy_voice_package">Comprar paquete de voz</string>
+    <string name="buy_nauta">Bolsa Nauta</string>
+    <string name="buy_all">Planes</string>
+    <string name="buy_sms">Plan de mensajes</string>
+    <string name="buy_sms_package">Comprar plan de SMS</string>
+    <string name="buy_voice">Plan de minutos</string>
+    <string name="buy_voice_package">Comprar plan de voz</string>
+    <string name="friend_plan">Plan amigos</string>
     <string name="yesterday">Ayer</string>
     <string name="widget_x_2">Kontak (1x2)</string>
     <string name="widget_x_3">Kontak (1x3)</string>
@@ -357,6 +361,15 @@
     <string name="voice_15">15 min x 4.20 CUC</string>
     <string name="voice_10">10 min x 2.90 CUC</string>
     <string name="voice_5">5 min x 1.50 CUC</string>
+    <string name="activate">Activar plan</string>
+    <string name="deactivate">Desactivar plan</string>
+    <string name="add_number">Adicionar número</string>
+    <string name="remove_number">Eliminar número</string>
+    <string name="status">Consultar estado</string>
+    <string name="list">Amigos</string>
+    <string name="num_count">Cambios realizados</string>
+    <string name="add_number_transition" translatable="false">add_number</string>
+    <string name="remove_number_transition" translatable="false">remove_number</string>
 
 
 </resources>

@@ -97,6 +97,12 @@
             android:summary="@string/birthday_notification_summary"
             android:defaultValue="true" />
 
+        <CheckBoxPreference
+            android:key="@string/preference_silence_birthday_notification"
+            android:title="@string/silence_birthday"
+            android:summary="@string/silence_birthday_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="@string/preference_birthday_notification_dialog"
             android:title="@string/birthday_notification"

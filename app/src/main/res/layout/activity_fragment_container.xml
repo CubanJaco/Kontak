@@ -64,7 +64,7 @@
                     android:paddingLeft="@dimen/padding_small_button"
                     android:paddingRight="@dimen/padding_small_button"
                     android:paddingStart="@dimen/padding_small_button"
-                    android:singleLine="true"
+                    android:maxLines="1"
                     android:text="@string/receiver"
                     android:textSize="@dimen/textSmallSize" />
 
@@ -75,24 +75,9 @@
                     android:hint="@string/name_or_number"
                     android:inputType="textCapWords"
                     android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:singleLine="true" />
+                    android:maxLines="1"/>
 
             </android.support.design.widget.CoordinatorLayout>
-
-            <!--<LinearLayout-->
-                <!--android:id="@+id/find_button"-->
-                <!--android:layout_width="@dimen/find_button"-->
-                <!--android:layout_height="@dimen/find_button"-->
-                <!--android:background="@drawable/rounded_corner_button_material"-->
-                <!--android:padding="@dimen/padding_small_button">-->
-
-                <!--<ImageView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="match_parent"-->
-                    <!--android:tint="@color/white"-->
-                    <!--android:src="@drawable/icon_search" />-->
-
-            <!--</LinearLayout>-->
 
         </LinearLayout>
 

@@ -94,22 +94,20 @@ public class MyCallLog {
         return calls;
     }
 
-    public List<Call> getCallLog(){
-        return getCallLog(1);
+    @Deprecated
+    public List<Call> getCallLog(int page) {
+        return null;
     }
 
-    public List<Call> getCallLog(int page){
+    public List<Call> getCallLog(){
 
         List<MyCallLog.Call> calls = new ArrayList<>();
-
-        int pageEnd = 25;
-        int pageStart = (page - 1) * pageEnd;
 
         Uri uri = CallLog.Calls.CONTENT_URI;
         ContentResolver contentResolver = context.getContentResolver();
         Cursor cursor = null;
         try {
-            cursor = contentResolver.query(uri, null, null, null, CallLog.Calls.DATE + " DESC LIMIT "+pageEnd+" OFFSET "+pageStart);
+            cursor = contentResolver.query(uri, null, null, null, CallLog.Calls.DATE + " DESC");
         }
         catch (SecurityException e) {
             e.printStackTrace();
@@ -209,6 +207,10 @@ public class MyCallLog {
             }
 
             return df.format(calendar.getTime());
+        }
+
+        public boolean equals(Call o){
+            return number.equals(o.number);
         }
     }
 }

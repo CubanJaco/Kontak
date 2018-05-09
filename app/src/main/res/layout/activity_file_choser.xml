@@ -31,6 +31,13 @@
         tools:showIn="@layout/activity_main"
         android:orientation="vertical" >
 
+        <TextView
+            android:id="@+id/file_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin" />
+
         <android.support.v7.widget.RecyclerView
             android:id="@+id/file_choser"
             android:name="cu.uci.test.ItemListFragment"

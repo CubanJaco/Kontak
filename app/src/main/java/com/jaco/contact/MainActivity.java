@@ -58,7 +58,9 @@ import java.io.File;
 import java.lang.ref.WeakReference;
 import java.sql.SQLException;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements ServiciosSmsFragment.OnServiciosSmsInteractionListener, Callback, OnClickListener, StartFragment.OnStartFragmentInteractionListener {
 
@@ -965,7 +967,34 @@ public class MainActivity extends AppCompatActivity implements ServiciosSmsFragm
 
         @Override
         protected Boolean doInBackground(Void... aVoids) {
-            return Utils.selectDatabase(weakReference.get());
+            Map<String, Integer> scanned = new HashMap<>();
+
+            File external = Environment.getExternalStorageDirectory();
+            scanned.put(external.getAbsolutePath(), 1);
+            boolean found = Utils.selectDatabase(weakReference.get(), external);
+
+            //probar con rutas alternativas
+            external = new File("/storage/emulated/0");
+            if (!found && external.exists() && external.isDirectory() && scanned.get(external.getAbsolutePath()) == null)
+                found = Utils.selectDatabase(weakReference.get(), external);
+            scanned.put(external.getAbsolutePath(), 1);
+
+            external = new File("/storage");
+            if (!found && external.exists() && external.isDirectory() && scanned.get(external.getAbsolutePath()) == null)
+                found = Utils.selectDatabase(weakReference.get(), external);
+            scanned.put(external.getAbsolutePath(), 1);
+
+            external = new File("/sdcard");
+            if (!found && external.exists() && external.isDirectory() && scanned.get(external.getAbsolutePath()) == null)
+                found = Utils.selectDatabase(weakReference.get(), external);
+            scanned.put(external.getAbsolutePath(), 1);
+
+            external = new File("/mnt");
+            if (!found && external.exists() && external.isDirectory() && scanned.get(external.getAbsolutePath()) == null)
+                found = Utils.selectDatabase(weakReference.get(), external);
+            scanned.put(external.getAbsolutePath(), 1);
+
+            return found;
         }
 
         @Override
