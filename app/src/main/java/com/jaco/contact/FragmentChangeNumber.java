@@ -91,6 +91,8 @@ public class FragmentChangeNumber extends Fragment implements View.OnClickListen
             return;
         }
 
+        number = new PhoneNumber(number).getNumber();
+
         String cal = "*133*4*2*1*"+number+"#";
         if (transitionId == R.id.remove_number)
             cal = "*133*4*2*2*"+number+"#";

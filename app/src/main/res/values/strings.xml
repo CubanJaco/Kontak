@@ -117,27 +117,27 @@
     <string name="july">Jul</string>
     <string name="june">Jun</string>
     <string name="large_text">"\n\n"
-        "Kontak ofrece mayor comodidad en las operaciones de consulta, "
-        "recarga y transferencia de saldo, sintetizando pasos en el "
-        "acceso al buzón de voz, las llamadas gratuitas y las privadas. "
-        "Integra un set de facilidades e interesantes opciones que "
-        "permiten un acceso sencillo a informaciones importantes en "
+        "Kontak ofrece mayor comodidad en las operaciones de consulta,"
+        "recarga y transferencia de saldo, sintetizando pasos en el"
+        "acceso a las transferencias de saldo, las llamadas gratuitas y las privadas."
+        "Integra un set de facilidades e interesantes opciones que"
+        "permiten un acceso sencillo a informaciones importantes en"
         "su teléfono móvil.\n"
-        "La aplicación puede integrarse con la base de datos de ETECSA "
-        "(no distribuida por el equipo de desarrollo) y, de esta forma, "
-        "buscar los teléfonos que necesite, así como obtener notificaciones "
-        "de los cumpleaños de sus amigos y saber quién le llama, aun cuando "
+        "La aplicación puede integrarse con la base de datos de ETECSA"
+        "(no distribuida por el equipo de desarrollo) y, de esta forma,"
+        "buscar los teléfonos que necesite, así como obtener notificaciones"
+        "de los cumpleaños de sus amigos y saber quién le llama, aun cuando"
         "no conoce el número.\n\n"
         "NOTA DEL AUTOR\n\n"
-        "Si Kontak le ha sido de ayuda y cree que debería cambiar algo "
-        "o agregarle nuevas funcionalidades, no dude en enviar sus "
+        "Si Kontak le ha sido de ayuda y cree que debería cambiar algo"
+        "o agregarle nuevas funcionalidades, no dude en enviar sus"
         "sugerencias al correo de contacto.\n\n"
-        "Si de veras está satisfecho con el trabajo realizado y desea "
-        "contribuir al desarrollo de nuevas aplicaciones como esta, puede "
-        "hacerlo transfiriendo saldo al autor con solo presionar la cajita "
-        "de regalo que se muestra encima. Su aporte de $0.01 también ayuda, "
+        "Si de veras está satisfecho con el trabajo realizado y desea"
+        "contribuir al desarrollo de nuevas aplicaciones como esta, puede"
+        "hacerlo transfiriendo saldo al autor con solo presionar la cajita"
+        "de regalo que se muestra encima. Su aporte de $0.01 también ayuda,"
         "y si es de más, aún mejor.\n\n"
-        "Si desea contratar los servicios de desarrollo para su empresa o "
+        "Si desea contratar los servicios de desarrollo para su empresa o"
         "negocio particular, esperamos por usted.\n"
         "Muchas gracias.\n\n"
     </string>
@@ -370,6 +370,8 @@
     <string name="num_count">Cambios realizados</string>
     <string name="add_number_transition" translatable="false">add_number</string>
     <string name="remove_number_transition" translatable="false">remove_number</string>
+    <string name="personalize_notifications">Personalización de notificaciones</string>
+    <string name="summary_personalize_notifications">Obtenga el control absoluto de sus notificaciones</string>
 
 
 </resources>
