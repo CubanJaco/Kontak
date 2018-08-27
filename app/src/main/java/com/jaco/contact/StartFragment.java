@@ -61,6 +61,9 @@ public class StartFragment extends Fragment implements View.OnClickListener {
         LinearLayout recarga_button = (LinearLayout) rootView.findViewById(R.id.button_recarga);
         recarga_button.setOnClickListener(this);
 
+        LinearLayout check_imei = (LinearLayout) rootView.findViewById(R.id.button_check_imei);
+        check_imei.setOnClickListener(this);
+
         LinearLayout transfer_button = (LinearLayout) rootView.findViewById(R.id.button_transfer);
         transfer_button.setOnClickListener(this);
 
@@ -111,6 +114,10 @@ public class StartFragment extends Fragment implements View.OnClickListener {
                 break;
             }
             case R.id.button_buy_all: {
+                mListener.onStartFragmentInteraction(id);
+                break;
+            }
+            case R.id.button_check_imei: {
                 mListener.onStartFragmentInteraction(id);
                 break;
             }

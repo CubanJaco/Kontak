@@ -16,7 +16,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Region;
 import android.net.Uri;
 import android.os.Build;
-import android.os.Environment;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -38,6 +37,73 @@ public class Utils {
     public static final String ACTION_FREE_CALL = "ACTION_FREE_CALL";
     public static final String ACTION_UNKNOWN_CALL = "ACTION_UNKNOWN_CALL";
     public static final String ACTION_TRANSFER = "ACTION_TRANSFER";
+
+    public static int validateImei(String imei) {
+
+        //si la longitud del imei es distinta de 15 es invalido
+        //si el imei contiene letras es invalido
+        if (imei.length() != 15)
+            return CheckImei.SHORT_IMEI;
+
+        if (!PhoneNumber.allNumbers(imei))
+            return CheckImei.MALFORMED_IMEI;
+
+        //obtener el ultimo digito como numero
+        int last = imei.charAt(14) - 48;
+
+        //duplicar cada segundo digito
+        //sumar cada uno de los digitos resultantes del nuevo imei
+        int curr;
+        int sum = 0;
+        for (int i = 0; i < 14; i++) {
+            curr = imei.charAt(i) - 48;
+            if (i % 2 != 0)
+                sum += duplicateAndSum(curr);
+            else
+                sum += curr;
+        }
+
+        //redondear al multiplo de 10 superior mas cercano
+        int round = sum % 10 == 0 ? sum : ((sum / 10 + 1) * 10);
+
+        return (round - sum == last) ? CheckImei.VALID_IMEI_NO_NETWORK : CheckImei.INVALID_IMEI;
+
+    }
+
+    private static int duplicateAndSum(int n) {
+
+        switch (n) {
+            case 5: {
+                //5+5 = 10
+                //1+0 = 1
+                return 1;
+            }
+            case 6: {
+                //6+6 = 12
+                //1+2 = 3
+                return 3;
+            }
+            case 7: {
+                //7=7 = 14
+                //1+4 = 5
+                return 5;
+            }
+            case 8: {
+                //8+8 = 16
+                //1+6 = 7
+                return 7;
+            }
+            case 9: {
+                //9+9 = 18
+                //1+8 = 9
+                return 9;
+            }
+            default: {
+                return n*2;
+            }
+        }
+
+    }
 
     public static Bitmap getBitmapFromUri(Context context, Uri uri){
 

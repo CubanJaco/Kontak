@@ -722,6 +722,14 @@ public class MainActivity extends AppCompatActivity implements ServiciosSmsFragm
                         .commit();
                 break;
             }
+            case R.id.button_check_imei: {
+                getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.enter_from_bottom, R.anim.exit_to_bottom, R.anim.enter_from_bottom, R.anim.exit_to_bottom)
+                        .replace(R.id.container, CheckImei.newInstance())
+                        .addToBackStack(null)
+                        .commit();
+                break;
+            }
         }
     }
 

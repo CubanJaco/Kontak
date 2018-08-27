@@ -123,10 +123,8 @@
         "Integra un set de facilidades e interesantes opciones que"
         "permiten un acceso sencillo a informaciones importantes en"
         "su teléfono móvil.\n"
-        "La aplicación puede integrarse con la base de datos de ETECSA"
-        "(no distribuida por el equipo de desarrollo) y, de esta forma,"
-        "buscar los teléfonos que necesite, así como obtener notificaciones"
-        "de los cumpleaños de sus amigos y saber quién le llama, aun cuando"
+        "Con esta aplicación usted puede obtener notificaciones de los cumpleaños "
+        "de sus amigos y saber quién le llama, o si la llamada entrante es gratis o no, aun cuando"
         "no conoce el número.\n\n"
         "NOTA DEL AUTOR\n\n"
         "Si Kontak le ha sido de ayuda y cree que debería cambiar algo"
@@ -372,6 +370,17 @@
     <string name="remove_number_transition" translatable="false">remove_number</string>
     <string name="personalize_notifications">Personalización de notificaciones</string>
     <string name="summary_personalize_notifications">Obtenga el control absoluto de sus notificaciones</string>
+    <string name="check_imei">Comprobar IMEI</string>
+    <string name="imei_checker">Comprobador IMEI</string>
+    <string name="ok">OK</string>
+    <string name="valid_imei">Su teléfono puede ser usado en la red de ETECSA.</string>
+    <string name="valid_imei_no_network">El IMEI de su teléfono cumple con los reqisitos establecidos. Para un mejor resultado, repita la operación con los datos móviles encendidos.</string>
+    <string name="invalid_imei">El IMEI de su teléfono no parece ser correcto.</string>
+    <string name="malformed_imei">El IMEI de su teléfono debe contener solo números.</string>
+    <string name="short_imei">El IMEI de su teléfono debe contener exactamente 15 dígitos.</string>
+    <string name="checking_imei">Verificando IMEI.</string>
+    <string name="check_imei_description">"Compruebe si el <b>IMEI</b> de su teléfono celular es válido para las operaciones en la red de telefonía móvil de ETECSA con ayuda de este sencillo formulario\n\nLa aplicación debe detectar automáticamente el código <b>IMEI</b> de su dispositivo. En caso contrario, introduzca el número manualmente (para consultarlo, marque en su teléfono <b>*#06#</b>). Si Así lo desea, puede comprobar también la validez del <b>IMEI</b> de sus amigos.\n\nAsegúrese de tener los datos móviles encendidos, de modo que pueda verificar la información solicitada directamente del sitio web https://mi.cubacel.net (completamente gratis).\n\nDe no tener conexión, se comprobará solamente que su <b>IMEI</b> cumpla los requisitos necesarios."
+    </string>
 
 
 </resources>
