@@ -1,6 +1,8 @@
 package com.jaco.contact;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,6 +21,7 @@ import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Toast;
 
 import com.jaco.contact.preferences.mSharedPreferences;
 
@@ -37,6 +40,15 @@ public class Utils {
     public static final String ACTION_FREE_CALL = "ACTION_FREE_CALL";
     public static final String ACTION_UNKNOWN_CALL = "ACTION_UNKNOWN_CALL";
     public static final String ACTION_TRANSFER = "ACTION_TRANSFER";
+
+    public static void copyToClipboard(Context context, String string){
+        ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText(string, string);
+        if (clipboard != null) {
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(context, R.string.to_clipboard, Toast.LENGTH_SHORT).show();
+        }
+    }
 
     public static int validateImei(String imei) {
 

@@ -381,6 +381,7 @@
     <string name="checking_imei">Verificando IMEI.</string>
     <string name="check_imei_description">"Compruebe si el <b>IMEI</b> de su teléfono celular es válido para las operaciones en la red de telefonía móvil de ETECSA con ayuda de este sencillo formulario\n\nLa aplicación debe detectar automáticamente el código <b>IMEI</b> de su dispositivo. En caso contrario, introduzca el número manualmente (para consultarlo, marque en su teléfono <b>*#06#</b>). Si Así lo desea, puede comprobar también la validez del <b>IMEI</b> de sus amigos.\n\nAsegúrese de tener los datos móviles encendidos, de modo que pueda verificar la información solicitada directamente del sitio web https://mi.cubacel.net (completamente gratis).\n\nDe no tener conexión, se comprobará solamente que su <b>IMEI</b> cumpla los requisitos necesarios."
     </string>
+    <string name="to_clipboard">Copiado al portapapeles</string>
 
 
 </resources>

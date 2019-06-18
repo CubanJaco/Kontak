@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jaco.contact.CallLogAdapter.mHolder;
 import com.squareup.picasso.Callback;
@@ -119,7 +120,7 @@ public class AsyncCallLogHolder {
             super.onPostExecute(call);
 
             //llenar el holder con los datos reales
-            if (weakHolder == null || weakReference == null)
+            if (weakHolder == null || weakHolder.get() == null || weakReference == null || weakReference.get() == null)
                 return;
 
             weakHolder.get().contact_name.setText(call.getName());

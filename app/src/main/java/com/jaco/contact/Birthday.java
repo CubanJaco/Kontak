@@ -313,8 +313,12 @@ public class Birthday {
 
         millis = calendar.getTimeInMillis();
 
-        if (custom != null || birthday != null)
-            manager.set(AlarmManager.RTC_WAKEUP, millis, PendingIntent.getBroadcast(context, getId(), intent, PendingIntent.FLAG_CANCEL_CURRENT));
+        try {
+            if (custom != null || birthday != null)
+                manager.set(AlarmManager.RTC_WAKEUP, millis, PendingIntent.getBroadcast(context, getId(), intent, PendingIntent.FLAG_CANCEL_CURRENT));
+        } catch (SecurityException ex) {
+            ex.printStackTrace();
+        }
 
     }
 

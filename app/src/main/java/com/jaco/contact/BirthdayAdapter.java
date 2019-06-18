@@ -61,17 +61,17 @@ public class BirthdayAdapter extends RecyclerView.Adapter<BirthdayAdapter.mHolde
             }
         }
 
-        Object[] bd = birthdays.toArray();
-        Arrays.sort(bd, new Comparator<Object>() {
-            @Override
-            public int compare(Object ob_0, Object ob_1) {
-                Birthday bd_0 = (Birthday) ob_0;
-                Birthday bd_1 = (Birthday) ob_1;
-                return bd_0.getBirthday().compareTo(bd_1.getBirthday());
-            }
-        });
+//        Object[] bd = birthdays.toArray();
+//        Arrays.sort(bd, new Comparator<Object>() {
+//            @Override
+//            public int compare(Object ob_0, Object ob_1) {
+//                Birthday bd_0 = (Birthday) ob_0;
+//                Birthday bd_1 = (Birthday) ob_1;
+//                return bd_0.getBirthday().compareTo(bd_1.getBirthday());
+//            }
+//        });
 
-        this.birthdays = bd;
+        this.birthdays = birthdays.toArray();
         this.show_ignore = show_ignore;
 
     }

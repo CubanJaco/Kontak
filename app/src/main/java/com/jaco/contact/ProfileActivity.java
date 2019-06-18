@@ -22,6 +22,8 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
+import java.util.Locale;
+
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String PHONE_ENTRY = "phone_entry";
@@ -109,16 +111,20 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (phoneEntry.getType() != PhoneType.UNKNOWN){
             textView = (TextView) findViewById(R.id.owner);
             textView.setText(phoneEntry.getName());
+            textView.setOnClickListener(this);
 
             textView = (TextView) findViewById(R.id.address);
             textView.setText(phoneEntry.getAddress());
+            textView.setOnClickListener(this);
 
             textView = (TextView) findViewById(R.id.province);
             textView.setText(phoneEntry.getProvinceName(this));
+            textView.setOnClickListener(this);
         }
         else {
             textView = (TextView) findViewById(R.id.owner);
             textView.setText(getResources().getString(R.string.unknown));
+            textView.setOnClickListener(this);
 
             findViewById(R.id.CI_layout).setVisibility(View.GONE);
             findViewById(R.id.address_layout).setVisibility(View.GONE);
@@ -130,10 +136,12 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (!phoneNumber.isMovil()){
             findViewById(R.id.layout_send_sms).setVisibility(View.GONE);
             findViewById(R.id.layout_free_call).setVisibility(View.GONE);
+            findViewById(R.id.layout_button_transfer).setVisibility(View.GONE);
         }
 
         textView = (TextView) findViewById(R.id.number);
         textView.setText(phoneEntry.getNumber());
+        textView.setOnClickListener(this);
 
         //si es un fijo ocultar edad y fecha de nacimiento, de lo contrario calcular
         if (phoneEntry.getType() == PhoneType.FIX){
@@ -144,6 +152,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         else if (!phoneEntry.isValidIdentification()){
             textView = (TextView) findViewById(R.id.CI);
             textView.setText(phoneEntry.getIdentification());
+            textView.setOnClickListener(this);
 
             findViewById(R.id.birth_date_layout).setVisibility(View.GONE);
             findViewById(R.id.age_layout).setVisibility(View.GONE);
@@ -151,12 +160,15 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         else {
             textView = (TextView) findViewById(R.id.CI);
             textView.setText(phoneEntry.getIdentification());
+            textView.setOnClickListener(this);
 
             textView = (TextView) findViewById(R.id.birth_date);
             textView.setText(phoneEntry.getBirthDateString());
+            textView.setOnClickListener(this);
 
             textView = (TextView) findViewById(R.id.age);
-            textView.setText(String.format("%d", phoneEntry.getAge()));
+            textView.setText(String.format(Locale.US, "%d", phoneEntry.getAge()));
+            textView.setOnClickListener(this);
         }
 
         if (isContact)
@@ -252,6 +264,42 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
                 intent.putExtra(ProfileActivity.PHONE_ENTRY, phoneEntry);
 
                 startActivity(intent);
+                break;
+            }
+            case R.id.owner: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.CI: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.number: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.address: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.province: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.birth_date: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
+            }
+            case R.id.age: {
+                TextView textView = (TextView) view;
+                Utils.copyToClipboard(this, textView.getText().toString());
+                break;
             }
         }
     }

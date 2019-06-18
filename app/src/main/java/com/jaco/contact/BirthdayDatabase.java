@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -160,6 +162,14 @@ public class BirthdayDatabase {
         }
         query.close();
         db.close();
+
+        //ordenar el listado de cumpleannos
+        Collections.sort(birthdays, new Comparator<Birthday>() {
+            @Override
+            public int compare(Birthday o1, Birthday o2) {
+                return o1.getBirthday().compareTo(o2.getBirthday());
+            }
+        });
 
         return birthdays;
     }
