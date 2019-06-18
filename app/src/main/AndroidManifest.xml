@@ -157,7 +157,6 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:screenOrientation="portrait"
             android:theme="@style/TransparentActivity" />
 
         <activity
