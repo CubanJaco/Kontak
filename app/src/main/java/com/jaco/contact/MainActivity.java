@@ -48,6 +48,7 @@ import com.jaco.contact.errorReports.UncaughtException;
 import com.jaco.contact.preferences.Preferences;
 import com.jaco.contact.preferences.PreferencesActivity;
 import com.jaco.contact.preferences.mSharedPreferences;
+import com.jaco.contact.service.CallListenerService;
 import com.jaco.headerrecyclerview.RecyclerViewHeaderAdapter;
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Callback;
@@ -110,6 +111,9 @@ public class MainActivity extends AppCompatActivity implements ServiciosSmsFragm
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
             permissions[permissionCount++] = Manifest.permission.CALL_PHONE;
         }
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_CALL_LOG) != PackageManager.PERMISSION_GRANTED){
+            permissions[permissionCount++] = Manifest.permission.READ_CALL_LOG;
+        }
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED){
             permissions[permissionCount++] = Manifest.permission.SEND_SMS;
         }
@@ -121,9 +125,7 @@ public class MainActivity extends AppCompatActivity implements ServiciosSmsFragm
         }
 
         String[] perms = new String[permissionCount];
-        for (int i = 0; i < permissionCount; i++) {
-            perms[i] = permissions[i];
-        }
+        System.arraycopy(permissions, 0, perms, 0, permissionCount);
 
         if (permissionCount >= 1) {
             ActivityCompat.requestPermissions(MainActivity.this,
@@ -208,6 +210,10 @@ public class MainActivity extends AppCompatActivity implements ServiciosSmsFragm
 
         if (LogWriter.hasErrorLog(this)){
             errorMensaje();
+        }
+
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O) {
+            startService(new Intent(this, CallListenerService.class));
         }
 
     }

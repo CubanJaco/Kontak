@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.jaco.contact.preferences.mSharedPreferences;
+import com.jaco.contact.service.IncomingSmsReceiver;
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

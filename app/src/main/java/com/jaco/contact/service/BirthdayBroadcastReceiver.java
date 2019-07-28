@@ -1,4 +1,4 @@
-package com.jaco.contact;
+package com.jaco.contact.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -13,6 +13,15 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
+import com.jaco.contact.Birthday;
+import com.jaco.contact.BirthdayDatabase;
+import com.jaco.contact.Contacts;
+import com.jaco.contact.EtecsaDB;
+import com.jaco.contact.PhoneEntry;
+import com.jaco.contact.PhoneNumber;
+import com.jaco.contact.ProfileActivity;
+import com.jaco.contact.R;
+import com.jaco.contact.Utils;
 import com.jaco.contact.preferences.mSharedPreferences;
 
 import java.io.InputStream;
@@ -110,8 +119,14 @@ public class BirthdayBroadcastReceiver extends BroadcastReceiver {
 
         Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
 
+        String channel = "";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            channel = Utils.createChannel(context, context.getString(R.string.birthday_notification_channel), Utils.NOTIFICATION_CHANEL_BIRTHDAY_ID,
+                    NotificationManager.IMPORTANCE_DEFAULT, true, true);
+
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(context, channel)
                         .setSmallIcon(R.drawable.birthday_notification_icon)
                         .setLargeIcon(image)
                         .setContentTitle(title)

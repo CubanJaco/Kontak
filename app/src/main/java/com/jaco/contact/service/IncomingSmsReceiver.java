@@ -1,4 +1,4 @@
-package com.jaco.contact;
+package com.jaco.contact.service;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -12,16 +12,18 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.provider.Telephony;
 import android.support.v4.app.NotificationCompat;
-import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
 
+import com.jaco.contact.Contacts;
+import com.jaco.contact.EtecsaDB;
+import com.jaco.contact.PhoneEntry;
+import com.jaco.contact.R;
+import com.jaco.contact.Utils;
 import com.jaco.contact.preferences.mSharedPreferences;
 
 import java.io.InputStream;
-import java.util.regex.Pattern;
 
 /**
  * Created by osvel on 7/23/16.
@@ -125,8 +127,14 @@ public class IncomingSmsReceiver extends BroadcastReceiver {
         if (image == null)
             image = BitmapFactory.decodeResource(context.getResources(), R.drawable.user);
 
+        String channel = "";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            channel = Utils.createChannel(context, context.getString(R.string.call_sms_notification), Utils.NOTIFICATION_CHANEL_CALL_MESSAGE_ID,
+                    NotificationManager.IMPORTANCE_DEFAULT, false, true);
+
         NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(context)
+                new NotificationCompat.Builder(context, channel)
                         .setSmallIcon(R.drawable.message_notification_icon)
                         .setLargeIcon(image)
                         .setContentTitle(contact_name)

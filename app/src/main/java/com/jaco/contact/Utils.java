@@ -1,6 +1,10 @@
 package com.jaco.contact;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -16,8 +20,11 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Region;
+import android.media.AudioAttributes;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -40,6 +47,9 @@ public class Utils {
     public static final String ACTION_FREE_CALL = "ACTION_FREE_CALL";
     public static final String ACTION_UNKNOWN_CALL = "ACTION_UNKNOWN_CALL";
     public static final String ACTION_TRANSFER = "ACTION_TRANSFER";
+    public static final String NOTIFICATION_CHANEL_SERVICE_ID = "NOTIFICATION_CHANEL_SERVICE_ID";
+    public static final String NOTIFICATION_CHANEL_CALL_MESSAGE_ID = "NOTIFICATION_CHANEL_CALL_MESSAGE_ID";
+    public static final String NOTIFICATION_CHANEL_BIRTHDAY_ID = "NOTIFICATION_CHANEL_BIRTHDAY_ID";
 
     public static void copyToClipboard(Context context, String string){
         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
@@ -367,6 +377,60 @@ public class Utils {
         if (view == null) view = new View(activity);
 
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    @TargetApi(26)
+    private static String createChannel(Context context) {
+        return createChannel(context, context.getString(R.string.call_listen_notification), NOTIFICATION_CHANEL_SERVICE_ID, NotificationManager.IMPORTANCE_LOW, false, false);
+    }
+
+    @TargetApi(26)
+    public static String createChannel(Context context, String name, String channelId, int importance, Boolean sound, Boolean light) {
+
+        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        NotificationChannel mChannel = new NotificationChannel(channelId, name, importance);
+        Uri notificationSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        AudioAttributes att = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
+                .build();
+
+        if (light) {
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.BLUE);
+        }
+
+        if (sound)
+            mChannel.setSound(notificationSound, att);
+
+        mNotificationManager.createNotificationChannel(mChannel);
+
+        return channelId;
+    }
+
+    public static Notification getNotification(Context context) {
+
+        String channel = "";
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+            channel = createChannel(context);
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channel)
+//                .setSmallIcon(R.drawable.icon_kontak)
+//                .setCustomContentView(notificationLayout)
+                .setOngoing(true)
+                .setAutoCancel(false);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            return mBuilder.setPriority(Notification.PRIORITY_DEFAULT)
+                    .setCategory(Notification.CATEGORY_SERVICE)
+                    .build();
+        } else {
+            return mBuilder.setPriority(Notification.PRIORITY_DEFAULT)
+                    .build();
+        }
     }
 
 }
